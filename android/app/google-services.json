@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1005492825344",
+    "project_id": "team-abode",
+    "storage_bucket": "team-abode.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1005492825344:android:05e491cd97d785e96557e5",
+        "android_client_info": {
+          "package_name": "com.wempro.helpAbodeWorkerApp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAZ4QEW0_b8Tt0POb9Iuc-3ua-StewI3H0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

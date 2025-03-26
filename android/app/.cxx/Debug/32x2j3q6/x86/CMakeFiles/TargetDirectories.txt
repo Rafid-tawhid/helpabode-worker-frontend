@@ -1,0 +1,2 @@
+/Users/janekhan/AndroidStudioProjects/main project/helpabode-worker-frontend/android/app/.cxx/Debug/32x2j3q6/x86/CMakeFiles/edit_cache.dir
+/Users/janekhan/AndroidStudioProjects/main project/helpabode-worker-frontend/android/app/.cxx/Debug/32x2j3q6/x86/CMakeFiles/rebuild_cache.dir
