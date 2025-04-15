@@ -82,191 +82,196 @@ class _SignUpTabState extends State<SignUpTab> {
                                 mainAxisAlignment:
                                     MainAxisAlignment.spaceBetween,
                                 children: [
-                                  Column(
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
-                                    mainAxisAlignment: MainAxisAlignment.start,
-                                    children: [
-                                      Container(
-                                        width: 195.w,
-                                        height: 45,
-                                        color: Colors.white,
-                                        child: Focus(
-                                          onFocusChange: (val) {
-                                            if (val == false &&
-                                                firstName.text.trim().isEmpty) {
-                                              authProvider
-                                                  .changeFieldEmpty(true);
-                                            } else {
-                                              authProvider
-                                                  .changeFieldEmpty(false);
-                                            }
-                                          },
-                                          child: CustomTextFieldMin(
-                                            controller: firstName,
-                                            focusNode: focusNodeFirstName,
-                                            inputType: TextInputType.text,
-                                            // fillColor: authProvider.isFieldEmpty
-                                            //     ? AppColors.lightRed
-                                            //     : AppColors.boxColor,
-                                            borderRadius: 8,
-                                            fontSize: 14,
-                                            inputAction: TextInputAction.next,
-                                            hintText: 'First Name',
-                                            horizontalSize: 12,
-                                            fillColor: authProvider.isFieldEmpty
-                                                ? AppColors
-                                                    .invalidTextFieldColor
-                                                : Color(0xFFF6F6F6),
-                                            focusBorderColor: Colors.black,
-                                            focusBorderWidth: 1.5,
-                                            isShowBorder:
-                                                authProvider.isFieldEmpty,
-                                            enabledBorderWidth: 1,
-                                            isErrorBox: true,
-                                            enabledBorderColor: authProvider
-                                                    .isFieldEmpty
-                                                ? AppColors
-                                                    .invalidTextFieldBorderColor
-                                                : Colors.transparent,
-                                            // isShowBorder:
-                                            //     authProvider.isFieldEmpty,
-                                            // enabledBorderWidth: 1,
-                                            // isErrorBox: true,
-                                            // enabledBorderColor:
-                                            //     Colors.transparent,
-                                            validation: (value) {
-                                              if (value == null ||
-                                                  value.isEmpty) {
-                                                return authProvider
-                                                    .changeLastName(true);
+                                  Expanded(
+                                    child: Column(
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                      mainAxisAlignment: MainAxisAlignment.start,
+                                      children: [
+                                        Container(
+                                          width: 195.w,
+                                          height: 45,
+                                          color: Colors.white,
+                                          child: Focus(
+                                            onFocusChange: (val) {
+                                              if (val == false &&
+                                                  firstName.text.trim().isEmpty) {
+                                                authProvider
+                                                    .changeFieldEmpty(true);
+                                              } else {
+                                                authProvider
+                                                    .changeFieldEmpty(false);
                                               }
-                                              return authProvider
-                                                  .changeLastName(false);
                                             },
-                                            onFieldSubmitted: (value) {
-                                              focusNodeFirstName.unfocus();
-                                              FocusScope.of(context)
-                                                  .requestFocus(
-                                                      focusNodeLastName);
-                                            },
+                                            child: CustomTextFieldMin(
+                                              controller: firstName,
+                                              focusNode: focusNodeFirstName,
+                                              inputType: TextInputType.text,
+                                              // fillColor: authProvider.isFieldEmpty
+                                              //     ? AppColors.lightRed
+                                              //     : AppColors.boxColor,
+                                              borderRadius: 8,
+                                              fontSize: 14,
+                                              inputAction: TextInputAction.next,
+                                              hintText: 'First Name',
+                                              horizontalSize: 12,
+                                              fillColor: authProvider.isFieldEmpty
+                                                  ? AppColors
+                                                      .invalidTextFieldColor
+                                                  : Color(0xFFF6F6F6),
+                                              focusBorderColor: Colors.black,
+                                              focusBorderWidth: 1.5,
+                                              isShowBorder:
+                                                  authProvider.isFieldEmpty,
+                                              enabledBorderWidth: 1,
+                                              isErrorBox: true,
+                                              enabledBorderColor: authProvider
+                                                      .isFieldEmpty
+                                                  ? AppColors
+                                                      .invalidTextFieldBorderColor
+                                                  : Colors.transparent,
+                                              // isShowBorder:
+                                              //     authProvider.isFieldEmpty,
+                                              // enabledBorderWidth: 1,
+                                              // isErrorBox: true,
+                                              // enabledBorderColor:
+                                              //     Colors.transparent,
+                                              validation: (value) {
+                                                if (value == null ||
+                                                    value.isEmpty) {
+                                                  return authProvider
+                                                      .changeLastName(true);
+                                                }
+                                                return authProvider
+                                                    .changeLastName(false);
+                                              },
+                                              onFieldSubmitted: (value) {
+                                                focusNodeFirstName.unfocus();
+                                                FocusScope.of(context)
+                                                    .requestFocus(
+                                                        focusNodeLastName);
+                                              },
+                                            ),
                                           ),
                                         ),
-                                      ),
-                                      const SizedBox(height: 4),
-                                      authProvider.isFieldEmpty
-                                          ? Row(
-                                              children: [
-                                                const SizedBox(
-                                                  width: 2,
-                                                ),
-                                                SvgPicture.asset(
-                                                  "assets/svg/validation_icon.svg",
-                                                  width: 12,
-                                                ),
-                                                const SizedBox(
-                                                  width: 4,
-                                                ),
-                                                Text(
-                                                  "First name is required ",
-                                                  style: interText(
-                                                      12,
-                                                      myColors.errRedTextColor,
-                                                      FontWeight.w500),
-                                                )
-                                              ],
-                                            )
-                                          : const SizedBox.shrink()
-                                    ],
+                                        const SizedBox(height: 4),
+                                        authProvider.isFieldEmpty
+                                            ? Row(
+                                                children: [
+                                                  const SizedBox(
+                                                    width: 2,
+                                                  ),
+                                                  SvgPicture.asset(
+                                                    "assets/svg/validation_icon.svg",
+                                                    width: 12,
+                                                  ),
+                                                  const SizedBox(
+                                                    width: 4,
+                                                  ),
+                                                  Text(
+                                                    "First name is required ",
+                                                    style: interText(
+                                                        12,
+                                                        myColors.errRedTextColor,
+                                                        FontWeight.w500),
+                                                  )
+                                                ],
+                                              )
+                                            : const SizedBox.shrink()
+                                      ],
+                                    ),
                                   ),
-                                  Column(
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
-                                    mainAxisAlignment: MainAxisAlignment.start,
-                                    children: [
-                                      Container(
-                                        width: 195.w,
-                                        height: 45,
-                                        decoration: BoxDecoration(
-                                            color: authProvider.isLastName
-                                                ? AppColors.lightRed
-                                                : AppColors.boxColor,
-                                            borderRadius:
-                                                BorderRadius.circular(4)),
-                                        child: Focus(
-                                          onFocusChange: (val) {
-                                            if (val == false &&
-                                                lastName.text.trim().isEmpty) {
-                                              authProvider.changeLastName(true);
-                                            } else {
-                                              authProvider
-                                                  .changeLastName(false);
-                                            }
-                                          },
-                                          child: CustomTextFieldMin(
-                                            controller: lastName,
-                                            focusNode: focusNodeLastName,
-                                            inputType: TextInputType.text,
-                                            borderRadius: 8,
-                                            fontSize: 14,
-                                            inputAction: TextInputAction.next,
-                                            hintText: 'Last Name',
-                                            horizontalSize: 12,
-                                            fillColor: authProvider.isLastName
-                                                ? AppColors
-                                                    .invalidTextFieldColor
-                                                : Color(0xFFF6F6F6),
-                                            focusBorderColor: Colors.black,
-                                            focusBorderWidth: 1.5,
-                                            isShowBorder:
-                                                authProvider.isLastName,
-                                            enabledBorderWidth: 1,
-                                            isErrorBox: true,
-                                            enabledBorderColor:
-                                                authProvider.isLastName
-                                                    ? AppColors
-                                                        .invalidTextFieldBorderColor
-                                                    : Colors.transparent,
-                                            validation: (value) {
-                                              if (value == null ||
-                                                  value.isEmpty) {
-                                                return authProvider
-                                                    .changeLastName(true);
+                                  SizedBox(width: 8,),
+                                  Expanded(
+                                    child: Column(
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                      mainAxisAlignment: MainAxisAlignment.start,
+                                      children: [
+                                        Container(
+                                          width: 195.w,
+                                          height: 45,
+                                          decoration: BoxDecoration(
+                                              color: authProvider.isLastName
+                                                  ? AppColors.lightRed
+                                                  : AppColors.boxColor,
+                                              borderRadius:
+                                                  BorderRadius.circular(4)),
+                                          child: Focus(
+                                            onFocusChange: (val) {
+                                              if (val == false &&
+                                                  lastName.text.trim().isEmpty) {
+                                                authProvider.changeLastName(true);
+                                              } else {
+                                                authProvider
+                                                    .changeLastName(false);
                                               }
-                                              return authProvider
-                                                  .changeLastName(false);
                                             },
-                                            onFieldSubmitted: (value) {
-                                              focusNodeLastName.unfocus();
-                                              FocusScope.of(context)
-                                                  .requestFocus(focusNodeEmail);
-                                            },
+                                            child: CustomTextFieldMin(
+                                              controller: lastName,
+                                              focusNode: focusNodeLastName,
+                                              inputType: TextInputType.text,
+                                              borderRadius: 8,
+                                              fontSize: 14,
+                                              inputAction: TextInputAction.next,
+                                              hintText: 'Last Name',
+                                              horizontalSize: 12,
+                                              fillColor: authProvider.isLastName
+                                                  ? AppColors
+                                                      .invalidTextFieldColor
+                                                  : Color(0xFFF6F6F6),
+                                              focusBorderColor: Colors.black,
+                                              focusBorderWidth: 1.5,
+                                              isShowBorder:
+                                                  authProvider.isLastName,
+                                              enabledBorderWidth: 1,
+                                              isErrorBox: true,
+                                              enabledBorderColor:
+                                                  authProvider.isLastName
+                                                      ? AppColors
+                                                          .invalidTextFieldBorderColor
+                                                      : Colors.transparent,
+                                              validation: (value) {
+                                                if (value == null ||
+                                                    value.isEmpty) {
+                                                  return authProvider
+                                                      .changeLastName(true);
+                                                }
+                                                return authProvider
+                                                    .changeLastName(false);
+                                              },
+                                              onFieldSubmitted: (value) {
+                                                focusNodeLastName.unfocus();
+                                                FocusScope.of(context)
+                                                    .requestFocus(focusNodeEmail);
+                                              },
+                                            ),
                                           ),
                                         ),
-                                      ),
-                                      const SizedBox(
-                                        height: 4,
-                                      ),
-                                      authProvider.isLastName
-                                          ? Row(
-                                              children: [
-                                                const SizedBox(width: 2),
-                                                SvgPicture.asset(
-                                                  "assets/svg/validation_icon.svg",
-                                                  width: 12,
-                                                ),
-                                                const SizedBox(width: 4),
-                                                Text(
-                                                  "Last name is required ",
-                                                  style: interText(
-                                                      12,
-                                                      myColors.errRedTextColor,
-                                                      FontWeight.w500),
-                                                )
-                                              ],
-                                            )
-                                          : const SizedBox.shrink()
-                                    ],
+                                        const SizedBox(
+                                          height: 4,
+                                        ),
+                                        authProvider.isLastName
+                                            ? Row(
+                                                children: [
+                                                  const SizedBox(width: 2),
+                                                  SvgPicture.asset(
+                                                    "assets/svg/validation_icon.svg",
+                                                    width: 12,
+                                                  ),
+                                                  const SizedBox(width: 4),
+                                                  Text(
+                                                    "Last name is required ",
+                                                    style: interText(
+                                                        12,
+                                                        myColors.errRedTextColor,
+                                                        FontWeight.w500),
+                                                  )
+                                                ],
+                                              )
+                                            : const SizedBox.shrink()
+                                      ],
+                                    ),
                                   ),
                                 ],
                               ),
@@ -497,7 +502,7 @@ class _SignUpTabState extends State<SignUpTab> {
                                       //     child: Text('data')),
                                       Container(
                                         height: 45,
-                                        width: 270.w,
+                                        width: 270,
                                         decoration: BoxDecoration(
                                           borderRadius:
                                               BorderRadius.circular(4),

@@ -1,0 +1,2 @@
+/Users/mis-app-developer/AndroidStudioProjects/helpabode-worker-frontend/android/app/.cxx/Debug/1f6v1o2o/armeabi-v7a/CMakeFiles/edit_cache.dir
+/Users/mis-app-developer/AndroidStudioProjects/helpabode-worker-frontend/android/app/.cxx/Debug/1f6v1o2o/armeabi-v7a/CMakeFiles/rebuild_cache.dir
